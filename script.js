@@ -69,15 +69,29 @@ const whiteBackground = function () {
   }
 };
 
-// const addNames = function (stuName) {
-//   const list = document.createElement("li");
-//   let participantsName = document.createTextNode(stuName);
-//   list.appendChild(participantsName);
-
-//   console.log(list);
-//   console.log(participants);
-//   participants.appendChild(list);
-// };
-
 submissionHandler();
 whiteBackground();
+
+// const postStudentInfo = function () {
+//   let request = fetch(
+//     "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/put_v1",
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringfy({
+//           studentName: '',
+//           className: ,
+//           password: ,
+//      }
+//     }
+//   )
+//     .then((response) => { return response.json() })
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((error) => console.log("Error while fetching:", error));
+// };
+
+// postStudentInfo();
