@@ -1,20 +1,15 @@
 "use strict";
+const getURL =
+  "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/get_v1/getstudentdata";
 
 const participants = document.getElementById("student-list");
 
-// const html = `<tr>
-// <td>${studentName}</td>
-// <td>${className}</td>
-// <td>${password}</td>
-// </tr>`;
-
 async function fetchStudentsList() {
   try {
-    const resStudent = await fetch(
-      "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/get_v1/getstudentdata"
-    );
+    const resStudent = await fetch(getURL);
     const dataStudent = await resStudent.json();
     const items = dataStudent.Items;
+    await console.log(items);
     await showData(items);
   } catch {
     console.error("Error while fetching:");

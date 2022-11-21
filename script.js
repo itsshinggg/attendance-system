@@ -1,14 +1,13 @@
 "use strict";
 
-// import { Amplify, API, graphqlOperation } from "aws-amplify";
-// import awsconfig from "./aws-exports";
-// Amplify.configure(awsconfig);
-
 const btn = document.querySelector(".submit-btn");
 const studentName = document.querySelector('[name="name"]');
 const className = document.querySelector('[name="class"]');
 const password = document.querySelector('[name="password"]');
-// const participants = document.getElementById("facultyPage");
+const confirmation = document.querySelector(".overlay");
+const errorText = document.querySelector(".error-message");
+const putURL =
+  "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/put_v1/putstudentdata";
 
 let sName;
 let cName;
@@ -30,11 +29,11 @@ const submissionHandler = function () {
     cName = className.value.toUpperCase();
     pwd = password.value;
 
-    // addNames(sName);
-
     clearText();
-    console.log(`Name: ${sName}, Class: ${cName}, Password: ${pwd}`);
-    // return sName, cName, pwd;
+
+    postStudentInfo(sName, cName, pwd);
+
+    confirmSubmission();
   });
 };
 
@@ -53,45 +52,64 @@ const showError = function () {
     }
   }
   if (error.length !== 0) {
-    alert(
-      `Please fill in ${error
-        .map((e) => e.at(0).toUpperCase(0) + e.slice(1))
-        .join(" and ")} please!`
-    );
+    showErrorMessage(error);
   }
+};
+
+const showErrorMessage = function (error) {
+  errorText.classList.remove("hidden");
+  errorText.innerHTML = `Please insert ${error
+    .map((e) => e.at(0).toUpperCase(0) + e.slice(1))
+    .join(" and ")} !`;
+};
+
+const removeErrorMessage = function () {
+  errorText.classList.add("hidden");
 };
 
 const whiteBackground = function () {
   for (let input of studentInfo) {
     input.addEventListener("click", (e) => {
       e.target.classList.remove("error");
+      removeErrorMessage();
     });
   }
 };
 
+const postStudentInfo = function (sName, cName, pwd) {
+  let putData = {
+    studentName: sName,
+    className: cName,
+    password: pwd,
+  };
+
+  let option = {
+    method: "POST",
+    body: JSON.stringify(putData),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  };
+
+  let request = fetch(putURL, option)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => console.log("Error while fetching:", error));
+};
+
+const confirmSubmission = function () {
+  confirmation.classList.remove("hidden");
+};
+
+const removeConfirmation = function () {
+  document.body.addEventListener("click", function () {
+    if (!confirmation.classList.contains("hidden")) {
+      confirmation.classList.add("hidden");
+    }
+  });
+};
+
 submissionHandler();
 whiteBackground();
-
-// const postStudentInfo = function () {
-//   let request = fetch(
-//     "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/put_v1",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringfy({
-//           studentName: '',
-//           className: ,
-//           password: ,
-//      }
-//     }
-//   )
-//     .then((response) => { return response.json() })
-//     .then((data) => {
-//       console.log(data);
-//     })
-//     .catch((error) => console.log("Error while fetching:", error));
-// };
-
-// postStudentInfo();
+// removeConfirmation();

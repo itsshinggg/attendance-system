@@ -1,6 +1,6 @@
 div {
   margin: auto;
-  width: 60%;
+  width: 55%;
   border-radius: 5px;
   padding: 25px;
 }
@@ -29,13 +29,16 @@ select {
   background-image: url(https://www.cityu.edu/wp-content/uploads/2014/12/header-fpo.jpg);
 }
 
+.error-img {
+  background-image: url(error.jpg);
+}
+
 h1 {
   text-align: center;
 }
 
 .center {
   position: relative;
-  margin-top: 15%;
 }
 
 nav {
@@ -48,6 +51,36 @@ nav {
 
 .error {
   background-color: lightcoral;
+}
+
+.error-message {
+  margin: 3rem auto;
+  width: 50%;
+  padding: 0.5rem;
+  background-color: lightcoral;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.confirmation {
+  margin: 20rem auto;
+  width: 30%;
+  padding: 6rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200%;
+  background-color: rgba(93, 93, 93, 0.536);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
 
 /* Buttons */
@@ -76,6 +109,18 @@ nav {
 
 .btn:hover {
   background-color: #45a049;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  background-color: #ffa500;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
 }
 
 /* Faculty Page */
