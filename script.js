@@ -8,10 +8,7 @@ const confirmation = document.querySelector(".overlay");
 const errorText = document.querySelector(".error-message");
 const putURL =
   "https://ilcct0rpcf.execute-api.us-west-2.amazonaws.com/put_v1/putstudentdata";
-
-let sName;
-let cName;
-let pwd;
+let isConfirmed = false;
 let studentInfo = [studentName, className, password];
 let error = [];
 
@@ -25,9 +22,9 @@ const submissionHandler = function () {
       return;
     }
 
-    sName = studentName.value;
-    cName = className.value.toUpperCase();
-    pwd = password.value;
+    let sName = studentName.value;
+    let cName = className.value.toUpperCase();
+    let pwd = password.value;
 
     clearText();
 
@@ -100,16 +97,20 @@ const postStudentInfo = function (sName, cName, pwd) {
 
 const confirmSubmission = function () {
   confirmation.classList.remove("hidden");
+  setTimeout(() => {
+    isConfirmed = true;
+  }, 100);
 };
 
 const removeConfirmation = function () {
   document.body.addEventListener("click", function () {
-    if (!confirmation.classList.contains("hidden")) {
+    if (isConfirmed) {
       confirmation.classList.add("hidden");
+      isConfirmed = false;
     }
   });
 };
 
 submissionHandler();
 whiteBackground();
-// removeConfirmation();
+removeConfirmation();

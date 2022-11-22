@@ -1,19 +1,42 @@
+/* Common */
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
 div {
   margin: auto;
-  width: 55%;
+  width: 60%;
   border-radius: 5px;
   padding: 25px;
+  text-align: center;
 }
 
-.div1 {
-  margin: 2rem auto;
-}
-
-.div2 {
+.forms {
   background-color: #f2f2f2;
 }
 
+nav {
+  display: inline-block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: white;
+}
+
 /* Landing Page */
+.form-align {
+  text-align: left;
+}
+
+.submit-form {
+  position: absolute;
+  top: 20%;
+  left: auto;
+  right: auto;
+}
+
 input[type="text"],
 select {
   width: 100%;
@@ -33,32 +56,18 @@ select {
   background-image: url(error.jpg);
 }
 
-h1 {
-  text-align: center;
-}
-
-.center {
-  position: relative;
-}
-
-nav {
-  display: inline-block;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: white;
-}
-
 .error {
   background-color: lightcoral;
 }
 
 .error-message {
-  margin: 3rem auto;
-  width: 50%;
+  display: block;
+  position: absolute;
+  top: 7%;
+  width: auto;
   padding: 0.5rem;
   background-color: lightcoral;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .hidden {
@@ -126,7 +135,7 @@ nav {
 /* Faculty Page */
 
 .faculty-nav {
-  width: 6%;
+  width: auto;
   position: fixed;
   left: 1rem;
   background-color: #3271ee;
@@ -139,12 +148,12 @@ table {
   width: 60%;
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: left;
 }
 
 th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #04aa6d;
   color: white;
   border: 1px solid #ddd;
