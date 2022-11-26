@@ -58,3 +58,5 @@ async function deleteData(items) {
 }
 
 fetchStudentsList();
+
+console.log("test");
