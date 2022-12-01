@@ -7,6 +7,7 @@
     <title>Student Attendance Form</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+
   </head>
   <body class="landing_bg">
     <nav>
@@ -21,7 +22,11 @@
               <label for="">Name</label>
               <input type="text" name="name" placeholder="Your name.." />
               <label for="">Class</label>
-              <input type="text" name="class" placeholder="EX. CS519" />
+              <select id="" name="class" placeholder="EX. CS519">
+                <option value="none" selected disabled hidden>Select Class</option>
+                <option value="CS519">CS519</option>
+                <option value="DS620">DS620</option>
+              </select>
               <label for="">Password</label>
               <input type="text" name="password" placeholder="Today's Password..">
               </select>

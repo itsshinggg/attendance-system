@@ -1,5 +1,4 @@
 "use strict";
-
 const btn = document.querySelector(".submit-btn");
 const studentName = document.querySelector('[name="name"]');
 const className = document.querySelector('[name="class"]');

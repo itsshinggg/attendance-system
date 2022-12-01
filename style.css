@@ -13,6 +13,11 @@ div {
   text-align: center;
 }
 
+label {
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
 .forms {
   background-color: #f2f2f2;
 }
@@ -71,7 +76,7 @@ input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 9px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -79,7 +84,7 @@ select {
 }
 
 .landing_bg {
-  background-image: url(https://www.cityu.edu/wp-content/uploads/2014/12/header-fpo.jpg);
+  background-image: url(campus_img.jpeg);
 }
 
 .error-img {
@@ -135,8 +140,10 @@ select {
   color: red;
   border-color: red;
   position: absolute;
-  right: 23%;
-  border-radius: 2px;
+  margin-top: 1%;
+  right: 26%;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 table {
@@ -155,11 +162,13 @@ th {
   color: white;
   border: 1px solid #ddd;
   padding: 8px;
+  font-size: 1.2rem;
 }
 
 td {
   border: 1px solid #ddd;
   padding: 8px;
+  font-size: 1.3rem;
 }
 
 tr:nth-child(even) {
@@ -168,4 +177,27 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #ddd;
+}
+
+.select {
+  width: 15%;
+  border-color: green;
+  border-width: 2px;
+  text-align: center;
+  font-size: medium;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.class {
+  position: absolute;
+  left: 10%;
+  min-width: 40%;
+  margin-top: 1%;
+}
+
+.studentsTotal {
+  margin-top: 4%;
+  font-size: 1.5rem;
 }

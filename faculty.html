@@ -18,19 +18,24 @@
       <h1>Signed-in Studnet List</h1>
     </div>
     <div class="forms">
+      <form class="class">
+        <label for="">Class:</label>
+        <select name="" id="" class="select">
+          <option value="none" selected disabled hidden></option>
+          <option value="CS519">CS519</option>
+          <option value="DS620">DS620</option>
+          <option value="newClass">Add Class</option>
+        </select>
+      </form>
       <button class="refresh-btn">Refresh</button>
-      <h3 id="studentsTotal">Signed-in Students:</h3>
+      <h3 class="studentsTotal">Signed-in Students:</h3>
       <table>
-        <tr id="studentList">
+        <thead id="studentList">
           <th>Student Name</th>
           <th>Class Name</th>
           <th>Password</th>
-        </tr>
-        <!-- <tr>
-          <td>${studentName}</td>
-          <td>${className}</td>
-          <td>${password}</td>
-        </tr> -->
+        </thead>
+        <tbody></tbody>
       </table>
     </div>
   </body>
